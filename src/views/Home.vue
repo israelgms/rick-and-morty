@@ -5,13 +5,15 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import api from '../service/personagem'
 
 export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  mounted(){
   }
 }
 </script>
