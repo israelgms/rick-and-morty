@@ -6,7 +6,8 @@
 
 <script>
 import HelloWorld from '@/components/HelloWorld.vue'
-import api from '../service/personagem'
+
+import { mapActions } from 'vuex'
 
 export default {
   name: 'Home',
@@ -14,6 +15,10 @@ export default {
     HelloWorld
   },
   mounted(){
+    this.getPersonagens()
+  },
+  methods:{
+    ...mapActions(['getPersonagens'])
   }
 }
 </script>
