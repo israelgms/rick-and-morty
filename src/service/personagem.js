@@ -1,12 +1,10 @@
 import api from './api'
 
 export default{
-    async getPersonagens(){
-        try {
-            const res = await api.get('/character') 
-            return res           
-        } catch (error) {
-            console.log(error.message)            
-        }
-    }
-}
+    getPersonagens(){
+        return api.get('/character').then(res =>{
+            return res
+        }).catch(error => {
+            return error
+        })      
+}}
