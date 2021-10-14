@@ -5,14 +5,14 @@ export default {
     state: {
         locais: []
     },
-    mutation: {
+    mutations: {
         SET_LISTA(state, payload) {
             state.locais = payload
         }
     },
-    action: {
+    actions: {
         async getLocais(context) {
-            const res = ServiceApi.getLocations()
+            const res = await ServiceApi.getLocais()
             context.commit('SET_LISTA', res.data.results)
         }
     },

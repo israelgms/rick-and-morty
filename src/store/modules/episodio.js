@@ -12,7 +12,7 @@ export default{
         }
     },
     actions:{
-        getEpisodios(context){
+        async getEpisodios(context){
             const res = await serviceApi.getEpisodios()
             context.commit('SET_EPISODIOS', res.data.results)
         }

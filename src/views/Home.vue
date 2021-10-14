@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <h1>home</h1>
-    <!-- <p>{{ personagens.name }}</p> -->
   </div>
 </template>
 
@@ -16,12 +15,18 @@ export default {
     HelloWorld
   },
   mounted(){
+    this.getEpisodios(),
+    this.getLocais(),
     this.getPersonagens()
   },
   methods:{
+    ...mapActions( 'episodio', ['getEpisodios']),
+    ...mapActions( 'local', ['getLocais']),
     ...mapActions( 'personagem', ['getPersonagens'])
   },
   computed:{
+    ...mapGetters('episodio', ['listEpisodios']),
+    ...mapGetters('local', ['listLocais']),
     ...mapGetters('personagem', ['listPersonagens'])
   }
 }
