@@ -1,8 +1,7 @@
 <template>
   <div class="home">
     <h1>home</h1>
-    <p>{{ listPersonagens }}</p>
-    <img :src= listPersonagens.image />
+    <p>{{ personagens.name }}</p>
   </div>
 </template>
 
