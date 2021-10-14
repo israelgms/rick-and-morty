@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>home</h1>
-    <p>{{ personagens.name }}</p>
+    <!-- <p>{{ personagens.name }}</p> -->
   </div>
 </template>
 
@@ -19,10 +19,10 @@ export default {
     this.getPersonagens()
   },
   methods:{
-    ...mapActions(['getPersonagens'])
+    ...mapActions( 'personagem', ['getPersonagens'])
   },
   computed:{
-    ...mapGetters(['listPersonagens'])
+    ...mapGetters('personagem', ['listPersonagens'])
   }
 }
 </script>

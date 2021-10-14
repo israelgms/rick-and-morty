@@ -1,7 +1,7 @@
 import api from './api'
 
 export default{
-    async getEpisodes(){
+    async getEpisodios(){
         try {
             const res = await api.get('/episodes')
             return res
