@@ -1,33 +1,32 @@
 <template>
   <div class="home">
     <h1>home</h1>
+    <CardPersonagens />
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
+import CardPersonagens from '@/components/CardPersonagens.vue'
 //importando a Action. 
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    CardPersonagens
   },
-  mounted(){
-    this.getEpisodios(),
-    this.getLocais(),
-    this.getPersonagens()
+  async mounted(){
+    await this.getEpisodios(),
+    await this.getLocais(),
+    await this.getPersonagens()
   },
   methods:{
     ...mapActions( 'episodio', ['getEpisodios']),
     ...mapActions( 'local', ['getLocais']),
-    ...mapActions( 'personagem', ['getPersonagens'])
   },
   computed:{
     ...mapGetters('episodio', ['listEpisodios']),
     ...mapGetters('local', ['listLocais']),
-    ...mapGetters('personagem', ['listPersonagens'])
   }
 }
 </script>
